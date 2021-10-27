@@ -28,13 +28,13 @@ public class Main {
             if (time > 0) {
 
                 System.out.println(time);
-                Frame.timeUntilStart.setBounds(300, 475,1000,50);
+                Frame.timeUntilStart.setBounds(300, 500,1000,50);
                 Frame.timeUntilStart.setText("AutoTyper Starting In " + (time));
                 time--;
             } else {
                 System.out.println("AutoTyper Enabled");
 
-                Frame.timeUntilStart.setBounds(357, 475,1000,50);
+                Frame.timeUntilStart.setBounds(357, 500,1000,50);
                 Frame.timeUntilStart.setText("Started!");
                 time--;
             }
@@ -75,7 +75,8 @@ public class Main {
                 String typeOut = "";
 
 
-                int timesToPaste = Integer.parseInt(Frame.timestopaste.getText());
+    int timesToPaste = Integer.parseInt(Frame.timestopaste.getText());
+
 
                 for(int q = 0; q<timesToPaste; q++){
                     File file = new File((String.valueOf(getClass().getResourceAsStream("autotyper.txt"))));
@@ -213,15 +214,47 @@ public class Main {
 
 
                             }
+                            else if (typeOutChar[i] == 'W'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_W);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_W);
+
+
+                            }
+                            else if (typeOutChar[i] == 'E'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_E);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_E);
+
+
+                            }
+                            else if (typeOutChar[i] == 'R'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_R);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_R);
+
+
+                            }
                             else {
 System.out.println(keyCode);
                                 robot.keyPress(keyCode);
 
                                 robot.keyRelease(keyCode);
+
                             }
 
+                            try {
 
-
+                                Thread.sleep(Integer.parseInt(Frame.timebetweenlettertypes.getText()));
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
 
 
                         }
@@ -245,7 +278,7 @@ System.out.println(keyCode);
 
 
                 }
-                Frame.timeUntilStart.setBounds(355, 475,1000,50);
+                Frame.timeUntilStart.setBounds(355, 500,1000,50);
                 Frame.timeUntilStart.setText("Finished!");
                 System.out.println("Finished!");
 

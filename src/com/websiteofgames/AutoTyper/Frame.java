@@ -2,7 +2,6 @@ package com.websiteofgames.AutoTyper;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class Frame {
@@ -13,16 +12,17 @@ public class Frame {
     private static JLabel title;
     public static JTextField timebetweenpastes;
     public static JTextField timestopaste;
+    public static JTextField timebetweenlettertypes;
     public static JLabel timebetweenpasteslabel;
     public static JLabel timestopastelabel;
-
+    public static JLabel timebetweenlettertypeslabel;
 
 public Frame() throws IOException {
 
 
 
     JPanel panel= new JPanel();
-    JFrame frame = new JFrame("AutoTyper v0.5");
+    JFrame frame = new JFrame("AutoTyper v0.5.5");
 
     startButton = new JButton("Start!");
     startButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -35,7 +35,7 @@ public Frame() throws IOException {
     toTypeLabel.setBounds(50, 200,100,50);
     toTypeLabel.setFont(new Font(null,Font.BOLD,25));
 
-    title = new JLabel("AutoTyper v0.5");
+    title = new JLabel("AutoTyper v0.5.5");
     title.setBounds(300, 20,1000,50);
     title.setFont(new Font(null,Font.BOLD,30));
 
@@ -47,6 +47,9 @@ public Frame() throws IOException {
 
     timestopaste = new JTextField();
     timestopaste.setBounds(200,450,100,25);
+    timebetweenlettertypes = new JTextField();
+    timebetweenlettertypes.setBounds(220,485,100,25);
+
 
     timebetweenpasteslabel = new JLabel("Time Between Pastes (ms): ");
     timebetweenpasteslabel.setBounds(20,415,175,25);
@@ -54,11 +57,13 @@ public Frame() throws IOException {
     timestopastelabel = new JLabel("Times To Paste:");
     timestopastelabel.setBounds(20,450,100,25);
 
+    timebetweenlettertypeslabel = new JLabel("Rest Time Between Letters (ms):");
+    timebetweenlettertypeslabel.setBounds(20,485,225,25);
 
 
 
     timeUntilStart = new JLabel("");
-    timeUntilStart.setBounds(300, 475,1000,50);
+    timeUntilStart.setBounds(300, 500,1000,50);
     timeUntilStart.setFont(new Font(null,Font.BOLD,20));
 
 
@@ -69,7 +74,8 @@ public Frame() throws IOException {
 
 
 
-
+    panel.add(timebetweenlettertypes);
+    panel.add(timebetweenlettertypeslabel);
     panel.add(timestopastelabel);
     panel.add(timebetweenpasteslabel);
 panel.add(timestopaste);
