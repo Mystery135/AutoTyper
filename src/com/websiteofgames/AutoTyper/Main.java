@@ -100,13 +100,129 @@ public class Main {
 
 
 
+
+
+
+                                Frame.timeUntilStart.setText("AutoTyper Failed! Key code not found for character " + typeOutChar[i]);
                                 throw new RuntimeException("Key code not found for character '" + typeOutChar[i] + "'");
+
+
+
+
+
+                            }
+                            else if (KeyEvent.VK_EXCLAMATION_MARK == keyCode){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_1);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_1);
+
+
+                            }
+                            else if (KeyEvent.VK_AT == keyCode){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_2);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_2);
+
+
+                            }
+                            else if (KeyEvent.VK_NUMBER_SIGN == keyCode){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_3);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_3);
+
+
+                            }
+                            else if (KeyEvent.VK_DOLLAR == keyCode){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_4);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_4);
+
+
+                            }
+
+                            else if (typeOutChar[i] == '%'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_5);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_5);
+
+
+                            }
+
+                            else if (typeOutChar[i] == '^'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_6);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_6);
+
+
+                            }
+
+                            else if (typeOutChar[i] == '&'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_7);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_7);
+
+
+                            }
+                            else if (typeOutChar[i] == '*'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_8);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_8);
+
+
+                            }
+                            else if (typeOutChar[i] == '('){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_9);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_9);
+
+
+                            }
+                            else if (typeOutChar[i] == ')'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_0);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_0);
+
+
+                            }
+                            else if (typeOutChar[i] == 'Q'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_Q);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_Q);
+
+
+                            }
+                            else {
+System.out.println(keyCode);
+                                robot.keyPress(keyCode);
+
+                                robot.keyRelease(keyCode);
                             }
 
 
-                            robot.keyPress(keyCode);
 
-                            robot.keyRelease(keyCode);
+
 
                         }
                         System.out.println(typeOutChar);
