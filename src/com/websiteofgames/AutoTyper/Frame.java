@@ -48,16 +48,16 @@ public Frame() throws IOException {
     timestopaste = new JTextField();
     timestopaste.setBounds(200,450,100,25);
     timebetweenlettertypes = new JTextField();
-    timebetweenlettertypes.setBounds(220,485,100,25);
+    timebetweenlettertypes.setBounds(200,485,100,25);
 
 
-    timebetweenpasteslabel = new JLabel("Time Between Pastes (ms): ");
+    timebetweenpasteslabel = new JLabel("Time Between Words (ms): ");
     timebetweenpasteslabel.setBounds(20,415,175,25);
 
     timestopastelabel = new JLabel("Times To Paste:");
     timestopastelabel.setBounds(20,450,100,25);
 
-    timebetweenlettertypeslabel = new JLabel("Rest Time Between Letters (ms):");
+    timebetweenlettertypeslabel = new JLabel("Type Speed (ms):");
     timebetweenlettertypeslabel.setBounds(20,485,225,25);
 
 

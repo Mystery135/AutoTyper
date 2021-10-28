@@ -97,31 +97,32 @@ public class Main {
                         for (int i = 0; i< typeOutChar.length; i++) {
                             int keyCode = KeyEvent.getExtendedKeyCodeForChar(typeOutChar[i]);
 
-                            if (KeyEvent.CHAR_UNDEFINED == keyCode) {
+
+
+                            switch (keyCode){
+                                case KeyEvent.CHAR_UNDEFINED:
+
+                                    Frame.timeUntilStart.setText("AutoTyper Failed! Key code not found for character " + typeOutChar[i]);
+                                    throw new RuntimeException("Key code not found for character '" + typeOutChar[i] + "'");
+                                    break;
 
 
 
-
-
-
-                                Frame.timeUntilStart.setText("AutoTyper Failed! Key code not found for character " + typeOutChar[i]);
-                                throw new RuntimeException("Key code not found for character '" + typeOutChar[i] + "'");
-
-
+                                case KeyEvent.VK_EXCLAMATION_MARK:
+                                    robot.keyPress(KeyEvent.VK_SHIFT);
+                                    robot.keyPress(KeyEvent.VK_1);
+                                    robot.keyRelease(KeyEvent.VK_SHIFT);
+                                    robot.keyRelease(KeyEvent.VK_1);
+                                    break;
 
 
 
                             }
-                            else if (KeyEvent.VK_EXCLAMATION_MARK == keyCode){
-
-                                robot.keyPress(KeyEvent.VK_SHIFT);
-                                robot.keyPress(KeyEvent.VK_1);
-                                robot.keyRelease(KeyEvent.VK_SHIFT);
-                                robot.keyRelease(KeyEvent.VK_1);
 
 
-                            }
-                            else if (KeyEvent.VK_AT == keyCode){
+
+
+                             if (KeyEvent.VK_AT == keyCode){
 
                                 robot.keyPress(KeyEvent.VK_SHIFT);
                                 robot.keyPress(KeyEvent.VK_2);
@@ -241,19 +242,327 @@ public class Main {
 
 
                             }
-                            else {
-System.out.println(keyCode);
-                                robot.keyPress(keyCode);
+                            else if (typeOutChar[i] == 'T'){
 
-                                robot.keyRelease(keyCode);
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_T);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_T);
+
+
+                            }
+                            else if (typeOutChar[i] == 'Y'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_Y);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_Y);
+
+
+                            }
+                            else if (typeOutChar[i] == 'U'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_U);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_U);
+
+
+                            }
+                            else if (typeOutChar[i] == 'I'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_I);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_I);
+
+
+                            }
+                            else if (typeOutChar[i] == 'O'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_O);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_O);
+
+
+                            }
+                            else if (typeOutChar[i] == 'P'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_P);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_P);
+
+
+                            }
+                            else if (typeOutChar[i] == '{'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_OPEN_BRACKET);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_OPEN_BRACKET);
+
+
+                            }
+                            else if (typeOutChar[i] == '}'){
+
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_CLOSE_BRACKET);
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_CLOSE_BRACKET);
+
+
+                            }
+                            else if (typeOutChar[i] == '|'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_BACK_SLASH);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_BACK_SLASH);
+
+
+                            }
+                            else if (typeOutChar[i] == 'A'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_A);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_A);
+
+
+                            }
+                            else if (typeOutChar[i] == 'S'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_S);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_S);
+
+
+                            }
+                            else if (typeOutChar[i] == 'D'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_D);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_D);
+
+
+                            }
+                            else if (typeOutChar[i] == 'F'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_F);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_F);
+
 
                             }
 
-                            try {
+                            else if (typeOutChar[i] == 'G'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_G);
 
-                                Thread.sleep(Integer.parseInt(Frame.timebetweenlettertypes.getText()));
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_G);
+
+
+                            }
+                            else if (typeOutChar[i] == 'H'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_H);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_H);
+
+
+                            }
+                            else if (typeOutChar[i] == 'J'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_J);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_J);
+
+
+                            }
+                            else if (typeOutChar[i] == 'K'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_K);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_K);
+
+
+                            }
+                            else if (typeOutChar[i] == 'L'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_L);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_L);
+
+
+                            }
+                            else if (typeOutChar[i] == ':'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_SEMICOLON);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_SEMICOLON);
+
+
+                            }
+                            else if (typeOutChar[i] == '"'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_QUOTE);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_QUOTE);
+
+
+                            }
+                            else if (typeOutChar[i] == 'Z'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_Z);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_Z);
+
+
+                            }
+                            else if (typeOutChar[i] == 'X'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_X);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_X);
+
+
+                            }
+                            else if (typeOutChar[i] == 'C'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_C);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_C);
+
+
+                            }
+                            else if (typeOutChar[i] == 'V'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_V);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_V);
+
+
+                            }
+                            else if (typeOutChar[i] == 'B'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_B);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_B);
+
+
+                            }
+                            else if (typeOutChar[i] == 'N'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_N);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_N);
+
+
+                            }
+                            else if (typeOutChar[i] == 'M'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_M);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_M);
+
+
+                            }
+                            else if (typeOutChar[i] == '<'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_COMMA);
+
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_COMMA);
+
+
+                            }
+                            else if (typeOutChar[i] == '>'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_PERIOD);
+
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_PERIOD);
+
+
+                            }
+                            else if (typeOutChar[i] == '?'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_SLASH);
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_SLASH);
+
+
+                            }
+                            else if (typeOutChar[i] == '_'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_MINUS);
+
+
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_MINUS);
+
+
+                            }
+                            else if (typeOutChar[i] == '+'){
+                                robot.keyPress(KeyEvent.VK_SHIFT);
+                                robot.keyPress(KeyEvent.VK_EQUALS);
+
+                                robot.keyRelease(KeyEvent.VK_SHIFT);
+                                robot.keyRelease(KeyEvent.VK_EQUALS);
+
+
+                            }
+//                            else {
+//System.out.println(keyCode);
+//                                robot.keyPress(keyCode);
+//
+//                                robot.keyRelease(keyCode);
+//
+//                            }
+
+
+                            try {
+                               int timebetweenlettertypes = Integer.parseInt(Frame.timebetweenlettertypes.getText());
+
+                                Thread.sleep(timebetweenlettertypes);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
+
                             }
 
 
