@@ -26,7 +26,7 @@ public Frame() throws IOException {
 
     startButton = new JButton("Start!");
     startButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    startButton.setBounds(325, 400,150,50);
+    startButton.setBounds(325, 430,150,50);
     startButton.addActionListener(new StartActionListener());
 
 
