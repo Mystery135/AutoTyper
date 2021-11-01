@@ -24,7 +24,7 @@ public Frame() throws IOException {
 
 
     JPanel panel= new JPanel();
-    JFrame frame = new JFrame("AutoTyper v1.1");
+    JFrame frame = new JFrame("AutoTyper v1.2");
 
     startButton = new JButton("Start!");
     startButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -37,7 +37,7 @@ public Frame() throws IOException {
     toTypeLabel.setBounds(50, 200,100,50);
     toTypeLabel.setFont(new Font(null,Font.BOLD,25));
 
-    title = new JLabel("AutoTyper v1.1");
+    title = new JLabel("AutoTyper v1.2");
     title.setBounds(300, 20,1000,50);
     title.setFont(new Font(null,Font.BOLD,30));
 
