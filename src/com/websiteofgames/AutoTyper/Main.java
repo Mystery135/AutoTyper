@@ -70,12 +70,20 @@ public class Main {
                     e.printStackTrace();
                 }
 
-
+                int timesToPaste;
                 char typeOutChar[];
                 String typeOut = "";
 
+                if (!paste10timesItemListener.paste10times){
 
-    int timesToPaste = Integer.parseInt(Frame.timestopaste.getText());
+                     timesToPaste = Integer.parseInt(Frame.timestopaste.getText());
+
+                }else{
+                     timesToPaste = 10;
+
+                }
+
+
 
 
                 for(int q = 0; q<timesToPaste; q++){
@@ -409,30 +417,43 @@ if (keyCode == KeyEvent.CHAR_UNDEFINED){
 
 
 
-                            try {
-                               int timebetweenlettertypes = Integer.parseInt(Frame.timebetweenlettertypes.getText());
+                if (!fastestSettingItemListener.fastestSetting){
 
-                                Thread.sleep(timebetweenlettertypes);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
+                    try {
+                        int timebetweenlettertypes = Integer.parseInt(Frame.timebetweenlettertypes.getText());
 
-                            }
+                        Thread.sleep(timebetweenlettertypes);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+
+                    }
 
 
-                        }
+                }
+
+                }
+
                         System.out.println(typeOutChar);
 
                         robot.keyPress(KeyEvent.VK_ENTER);
                         robot.keyRelease(KeyEvent.VK_ENTER);
 
 
-                        try {
-                            int timeBetweenPastes =    Integer.parseInt(Frame.timebetweenpastes.getText());
 
-                            Thread.sleep(timeBetweenPastes);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+
+                        if (!fastestSettingItemListener.fastestSetting){
+
+                            try {
+                                int timeBetweenPastes =    Integer.parseInt(Frame.timebetweenpastes.getText());
+
+                                Thread.sleep(timeBetweenPastes);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+
                         }
+
 
 
                     }

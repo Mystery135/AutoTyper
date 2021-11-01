@@ -16,13 +16,15 @@ public class Frame {
     public static JLabel timebetweenpasteslabel;
     public static JLabel timestopastelabel;
     public static JLabel timebetweenlettertypeslabel;
+    public static JCheckBox fastestSetting;
+    public static JCheckBox paste10times;
 
 public Frame() throws IOException {
 
 
 
     JPanel panel= new JPanel();
-    JFrame frame = new JFrame("AutoTyper v1.0");
+    JFrame frame = new JFrame("AutoTyper v1.1");
 
     startButton = new JButton("Start!");
     startButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -35,7 +37,7 @@ public Frame() throws IOException {
     toTypeLabel.setBounds(50, 200,100,50);
     toTypeLabel.setFont(new Font(null,Font.BOLD,25));
 
-    title = new JLabel("AutoTyper v1.0");
+    title = new JLabel("AutoTyper v1.1");
     title.setBounds(300, 20,1000,50);
     title.setFont(new Font(null,Font.BOLD,30));
 
@@ -60,6 +62,18 @@ public Frame() throws IOException {
     timebetweenlettertypeslabel = new JLabel("Type Speed (ms):");
     timebetweenlettertypeslabel.setBounds(20,485,225,25);
 
+    fastestSetting = new JCheckBox("Use Fastest Setting");
+    fastestSetting.setBounds(500,450,200,25);
+    fastestSetting.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    fastestSetting.addItemListener(new fastestSettingItemListener());
+
+
+    paste10times = new JCheckBox("Paste 10 Times");
+    paste10times.setBounds(500,430,200,25);
+    paste10times.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    paste10times.addItemListener(new paste10timesItemListener());
+
+
 
 
     timeUntilStart = new JLabel("");
@@ -72,8 +86,8 @@ public Frame() throws IOException {
 
 
 
-
-
+panel.add(paste10times);
+panel.add(fastestSetting);
     panel.add(timebetweenlettertypes);
     panel.add(timebetweenlettertypeslabel);
     panel.add(timestopastelabel);
